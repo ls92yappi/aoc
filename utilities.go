@@ -3,6 +3,7 @@ package aoc
 import (
 	"fmt"
 	"io/ioutil"
+	"log"
 	"os"
 	"strconv"
 	"strings"
