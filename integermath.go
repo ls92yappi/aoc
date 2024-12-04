@@ -265,8 +265,8 @@ func Factor(num int) []int {
 	sq_root,perf := SqrtFloor(num)
 	// if we found a perfect square, return early
 	if perf {
-		fl = append(fl,sq_root)
-		fl = append(fl,sq_root)
+		fl = append(fl,Factor(sq_root))
+		fl = append(fl,Factor(sq_root))
 		return fl
 	}
 	//sq_root := int(math.Sqrt(float64(num)))
