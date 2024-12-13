@@ -9,17 +9,20 @@ import (
 	"strings"
 )
 
-///////////////////////////////////////////////////////////
-//                                                       //
-//   Many of these functions below operate on or return  //
-//   int slices. None have any import dependencies.      //
-//                                                       //
-///////////////////////////////////////////////////////////
-//                                                       //
-// func InputFileName() string                           //
-// func ReadFile(fname string) ([]string, int, error)    //
-//                                                       //
-///////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////
+//                                                                //
+//   Many of these functions below operate on or return           //
+//   int slices. None have any import dependencies.               //
+//                                                                //
+////////////////////////////////////////////////////////////////////
+//                                                                //
+// func die(msg interface{})                                      //
+// func If[T any](cond bool, vtrue, vfalse T) T                   //
+// func InputFileName() string                                    //
+// func ReadWholeFile(fname string) ([]string, int, error)        //
+// func IntSlice(s string, delim string) (ints []int, int, error) //
+//                                                                //
+////////////////////////////////////////////////////////////////////
 
 // If returns vtrue if cond is true, vfalse otherwise.
 //
