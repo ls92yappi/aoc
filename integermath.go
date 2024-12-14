@@ -37,6 +37,7 @@ package aoc
 // func Factorial(n int) (int, error)                    //
 // func Binomial(n, k int) (int,error)                   //
 // func Permutations(n, k int) (int,error)               //
+// func ModSolver(d1, r1, d2, r2 int) int                //
 //                                                       //
 ///////////////////////////////////////////////////////////
 
@@ -457,4 +458,25 @@ func Permutations(n, k int) (int,error) {
 		}
 	}
 	return product, nil
+}
+
+// find n such that n%d1=r1 && n%d2=r2
+// solves r1 base repeats every d1 passes and r2 base repeats every d2 passes
+func ModSolver(d1, r1, d2, r2 int) int {
+	// verify we have valid modular arithmetic numbers
+	if d1 <= 0 || d2 <= 0 || r1 < 0 || r2 < 0 || r1 >= d1 || r2 >= d2 {
+		return -1
+	}
+
+	// limited trial and error
+	guess := r1
+	for range(d2) {
+		guess += d1 // maintains guess%d1=r1
+		if guess%d2 == r2 {
+			return guess
+		}
+	}
+
+	// This should never occur given the top filter above
+	return -1
 }
