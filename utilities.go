@@ -16,7 +16,7 @@ import (
 //                                                                //
 ////////////////////////////////////////////////////////////////////
 //                                                                //
-// func die(msg interface{})                                      //
+// func Die(msg interface{})                                      //
 // func If[T any](cond bool, vtrue, vfalse T) T                   //
 // func InputFileName() string                                    //
 // func ReadWholeFile(fname string) ([]string, int, error)        //
@@ -38,7 +38,7 @@ func If[T any](cond bool, vtrue, vfalse T) T {
 }
 
 // msg is interface{} because cannot convert error to string
-func die(msg interface{}) {
+func Die(msg interface{}) {
 	log.Println(msg)
 	os.Exit(1)
 }

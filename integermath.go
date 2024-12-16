@@ -462,6 +462,7 @@ func Permutations(n, k int) (int,error) {
 
 // find n such that n%d1=r1 && n%d2=r2
 // solves r1 base repeats every d1 passes and r2 base repeats every d2 passes
+// effectively, this is the Chinese Remainder Theorem for 2 divisors
 func ModSolver(d1, r1, d2, r2 int) int {
 	// verify we have valid modular arithmetic numbers
 	if d1 <= 0 || d2 <= 0 || r1 < 0 || r2 < 0 || r1 >= d1 || r2 >= d2 {
