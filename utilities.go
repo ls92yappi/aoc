@@ -60,7 +60,7 @@ func ReadWholeFile(fname string) (lines []string, numLines int, err error) {
 	emptySlice := make([]string, 0)
 	// open file
 	file, err := os.Open(fname)
-	if err != nil { die(err) }
+	if err != nil { Die(err) }
 	defer file.Close()
 
 	// read the whole file in
